@@ -60,7 +60,7 @@ def createDocument(col, docId, docText, docTitle, docDate, docCat):
     # produce a final document as a dictionary including all the required document fields
     # --> add your Python code here
     document = {
-        "doc": docId,
+        "doc": int(docId),
         "text": docText,
         "title": docTitle,
         "num_chars": num_char,
@@ -77,7 +77,7 @@ def deleteDocument(col, docId):
 
     # Delete the document from the database
     # --> add your Python code here
-    col.delete_one({"doc": docId})
+    col.delete_one({"doc": int(docId)})
 
 def updateDocument(col, docId, docText, docTitle, docDate, docCat):
 
