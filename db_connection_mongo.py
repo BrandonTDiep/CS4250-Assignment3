@@ -13,6 +13,7 @@
 # --> add your Python code here
 from pymongo import MongoClient
 import re
+import datetime
 
 def connectDataBase():
 
@@ -64,7 +65,7 @@ def createDocument(col, docId, docText, docTitle, docDate, docCat):
         "text": docText,
         "title": docTitle,
         "num_chars": num_char,
-        "date": docDate,
+        "date": datetime.datetime.strptime(docDate, "%Y-%d-%m"),
         "category": docCat,
         "terms": termList
     }
